@@ -1,0 +1,1 @@
+<img alt="Desert" src="img/Desert.jpg" />

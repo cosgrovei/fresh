@@ -1,0 +1,7 @@
+	$password = Hash::make('wx7401');
+	
+	$user = User::find(1);
+
+	$user->password = $password;
+
+	$user->save();
