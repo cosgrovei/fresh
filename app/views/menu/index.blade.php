@@ -25,7 +25,9 @@ a:hover {
 }
 </style>
 <h2><strong>{{ $message }}</strong></h2>
-Please download a {{ $type }}  menu <a href="{{ $link }}" >{{$type}}.pdf</a></p>
+
+
+Please download a {{ $type }}  menu <a href="{{ $link }}" >{{$type}}.pdf</a>
 
 <?php $cat=""; ?>
 <?php $name=""; ?>
@@ -79,10 +81,9 @@ Please download a {{ $type }}  menu <a href="{{ $link }}" >{{$type}}.pdf</a></p>
 @endforeach
 </table>
 </div>
+<br>
 
-
-
-
+@if(Auth::check())
 <p><button id="my-btn">{{ HTML::LinkRoute('dish_create', 'New dish',  $parameters = array($type))}}</button></p>
-
+@endif
 @stop

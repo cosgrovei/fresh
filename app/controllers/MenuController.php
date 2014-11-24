@@ -23,7 +23,7 @@ class MenuController extends BaseController {
 				 'dishes.categoryId',
 				 'categories.name AS category')
 		->get();
-		$link = 'http://localhost/dinner-menu.pdf';
+		$link = 'http://localhost/takeaway.pdf';
 		
 		$type = 'lunch';
 		$message = 'Lunch & Takeaway Menu';

@@ -97,6 +97,7 @@ Route::get('prices', array(
 
 Route::get('menu/create/{type}', array(
 	'as' => 'dish_create',
+	'before' => 'auth',
 	'uses' => 'MenuController@dish_create'
 	));
 
@@ -124,6 +125,7 @@ Route::get('dish/{id}/{type}/edit', array(
 
 	
 Route::post('menu/store', array(
+	'before' => 'auth',
 	'uses'=>'MenuController@store'
 	));
 
@@ -134,10 +136,12 @@ Route::get('dish/{id}/{type}', array(
 	));	
 	
 Route::put('menu/update/', array(
+	'before' => 'auth',
 	'uses' => 'MenuController@update'
 	));
 
 Route::delete('menu/delete',array(
+	'before' => 'auth',
 	'uses' => 'MenuController@delete'
 	));
 	
@@ -239,27 +243,6 @@ Route::get('logout', array('as' => 'logout', function () {
 Route::get('users', 'UsersController@actionIndex');
 
 Route::get('users/about','UsersController@actionAbout');
-
-Route::get('tvshow/{show?}/{year?}', function($show = null, $year = null) {
-	if (!$show && !$year)
-	{
-		return 'You did not pick a show.';
-	}
-	elseif (!$year)
-	{
-		return 'You picked the show <strong>' . $show . '</strong>';
-	}
-	return 'You picked the show <strong>' . $show .
-	'</strong> from the year <em>' . $year . '</em>.';
-})->where('year', '\d{4}');
-
-Route::get('admin-only', array(
-	'before' => 'checkAdmin', 
-	'after' => 'logAdmin', 
-	function(){
-		return 'Hello there, admin!';
-	}));
-
 
 
 

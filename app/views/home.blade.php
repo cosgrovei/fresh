@@ -60,9 +60,9 @@ $(document).ready(function(){
 
 <div id="slider">
 	<ul class="slides">
-		<li class="slide"><img src="img/large-udon_and_donburi.jpg" /></li>
-		<li class="slide"><img src="img/large-sushi.jpg" /></li>
-		<li class="slide"><img src="img/large-bento.jpg" /></li>
+		<li class="slide"><img src="img/donburi-1.jpg" /></li>
+		<li class="slide"><img src="img/gyoza.jpg" /></li>
+		<li class="slide"><img src="img/tofu-2.jpg" /></li>
 	</ul>
 </div>
 <section  id="leftsection">
